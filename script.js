@@ -1,7 +1,7 @@
 function getMinutes() {
-  const path = window.location.pathname.replace('/', '');
+  const path = window.location.pathname.split('/').filter(Boolean)[0];
   const mins = parseInt(path, 10);
-  return isNaN(mins) ? 25 : mins; // default 25 min
+  return isNaN(mins) ? 25 : mins;
 }
 
 let total = getMinutes() * 60;
